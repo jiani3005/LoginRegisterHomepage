@@ -7,8 +7,7 @@ import kotlinx.android.synthetic.main.fragment_homepage.*
 
 class HomepageActivity : AppCompatActivity() {
 
-    val names = arrayListOf<String>()
-    var images = arrayListOf<String>()
+    var hotels = arrayListOf<Hotel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,37 +16,38 @@ class HomepageActivity : AppCompatActivity() {
         addItems()
 
         recycleView.layoutManager = LinearLayoutManager(this)
-        recycleView.adapter = RecyclerViewAdapter(names, images, this)
+        recycleView.adapter = RecyclerViewAdapter(hotels, this)
 
     }
 
     fun addItems () {
-        names.add("Mickey")
-        images.add("https://i.pinimg.com/originals/10/2d/93/102d93da2543d8ffaa5d5e40d3d29479.jpg")
+        // Hotel(name, description, rating, price, image)
+        hotels.add(Hotel("Berjaya Langkawi Resort", "Langkawi", "4.0/5", "$88/night",
+            "https://www.berjayahotel.com/sites/default/files/special-offer-right_blr1.jpg"))
 
-        names.add("Pooh")
-        images.add("https://i.pinimg.com/originals/11/fa/35/11fa358b86bc036d273b6d9571c002ff.jpg")
+        hotels.add(Hotel("Shangri-La Hotel", "Kuala Lumpur", "4.5/5", "$103/night",
+            "https://images.trvl-media.com/hotels/1000000/30000/20700/20634/c3d8dffb_z.jpg"))
 
-        names.add("Donald Duck")
-        images.add("https://img-new.cgtrader.com/items/1939527/7e562bd2d7/baby-donald-duck-cute-3d-model-obj-mtl-fbx-stl-wrl-wrz.jpg")
+        hotels.add(Hotel("Traders Hotel", "Kuala Lumpur", "4.3/5", "$99/night",
+            "https://dak95nwic4sny.cloudfront.net/73/traders-hotel-kuala-lumpur-39859861-1530200286-WideInspirationalPhoto1170.jpg"))
 
-        names.add("Goofy")
-        images.add("https://i.pinimg.com/originals/fd/6f/43/fd6f436c70d4f2da7e81551afb92f458.jpg")
+        hotels.add(Hotel("Mandarin Oriental", "Kuala Lumpur", "4.3/5", "$129/night",
+            "https://luxurylaunches.com/wp-content/uploads/2017/05/Mandarin-Oriental-spa-review-1170x780.jpg"))
 
-        names.add("Chipmunk")
-        images.add("https://media1.tenor.com/images/ecdab77cfafea8f98f50cd267e57f8c5/tenor.gif?itemid=9499708")
+        hotels.add(Hotel("Grand Hyatt", "Kuala Lumpur", "4.4/5", "$137/night",
+            "https://pix10.agoda.net/hotelImages/337419/-1/50c3c00607896aa6b3226d07f5d4fb13.jpg?s=1024x768"))
 
-        names.add("Minnie")
-        images.add("https://i.pinimg.com/originals/f8/f8/2e/f8f82ef2891865720577dab196297417.jpg")
+        hotels.add(Hotel("Meritus Pelangi Beach Resort & Spa", "Langkawi", "4.0/5", "$125/night",
+            "https://d2felfhvpayf79.cloudfront.net/media/images/properties/malaysia/langkawi/meritus-pelangi-beach-resort-spa-langkawi/pbl_aerial_04_501_1200x800.jpg"))
 
-        names.add("Tigger")
-        images.add("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQOUfFLMz5IZx1Lod2pWvwNOtqqjScOhceZa8SyBkTdkhuZ1_F")
+        hotels.add(Hotel("The Westin Resort & Spa", "Langkawi", "4.5/5", "$155/night",
+            "https://images.trvl-media.com/hotels/1000000/40000/34700/34686/1900651e_z.jpg"))
 
-        names.add("Eeyore")
-        images.add("https://i.pinimg.com/originals/46/43/d5/4643d5f044bbe31783d6e6878a5ceb87.jpg")
+        hotels.add(Hotel("PARKROYAL", "Penang", "4.0/5", "$94/night",
+            "https://q-cf.bstatic.com/images/hotel/max1024x768/136/136176698.jpg"))
 
-        names.add("Piglet")
-        images.add("https://i.pinimg.com/originals/85/08/01/8508018e58de384772782e33fb93b8c1.png")
+        hotels.add(Hotel("The Danna", "Langkawi", "5.0/5", "$370/night",
+            "https://www.telegraph.co.uk/content/dam/Travel/hotels/asia/malaysia/The-Danna-Langkawi-p.jpg"))
 
     }
 }
